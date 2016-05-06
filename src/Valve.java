@@ -53,16 +53,12 @@ public class Valve extends PApplet {
 
 
     public void draw() {
-//        if (current_scale == 0) {
-//            current_scale = feature_map.get("Scale");
-//        }
-        
         current_scale = feature_map.get("Scale");
         
-        if (current_scale == 0) {
-            // no graph to draw
-            return;
-        }
+//        if (current_scale == 0) {
+//            // no graph to draw
+//            return;
+//        }
 
         float target_angle = map(feature_map.get("Angle"), 0, 1, 0.1f, 1);
         current_angle += (target_angle - current_angle) / delay;

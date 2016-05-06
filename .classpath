@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
+	<classpathentry kind="lib" path="libs/CSMAPI.jar"/>
+	<classpathentry kind="lib" path="libs/DAN.jar"/>
+	<classpathentry kind="lib" path="libs/json-20160212.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/exp4j.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/hemesh-external.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/hemesh.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/javolution-6.1.0.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/jts.jar"/>
+	<classpathentry kind="lib" path="libs/hemesh/trove-3.1a1.jar"/>
+	<classpathentry kind="lib" path="libs/processing/core.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="libs/processing/gluegen-rt.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-linux-amd64.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-linux-armv6hf.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-linux-i586.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-macosx-universal.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-windows-amd64.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all-natives-windows-i586.jar"/>
+	<classpathentry kind="lib" path="libs/processing/jogl-all.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

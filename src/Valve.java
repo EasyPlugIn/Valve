@@ -1,7 +1,8 @@
+import java.util.HashMap;
+
 import processing.core.PApplet;
 import wblut.geom.WB_Frame;
 import wblut.hemesh.HEC_FromFrame;
-import wblut.hemesh.HET_Diagnosis;
 import wblut.hemesh.HE_Mesh;
 import wblut.processing.WB_Render;
 
@@ -17,26 +18,56 @@ public class Valve extends PApplet {
     float current_scale;
     float current_angle;
     
+    static final String dm_name = Valve.class.getSimpleName();
+    static final String[] df_list = new String[]{"Scale", "Angle"};
+    static final HashMap<String, Float> feature_map = new HashMap<String, Float>();
+    
     HE_Mesh mesh;
     WB_Render render;
     WB_Frame frame;
+    
+    
+    static public void write (String feature, float para_data) {
+        if (!feature_map.containsKey(feature)) {
+            // error
+            return;
+        }
+        
+        if (para_data < 0 || para_data > 1) {
+            // error
+            return;
+        }
+        feature_map.put(feature, para_data);
+    }
 
 
     public void setup() {
         frameRate(30);
         
-        current_scale = 1;
-        current_angle = 1;
+        feature_map.put("Scale", 0f);
+        feature_map.put("Angle", 0f);
+        
+        current_scale = 0;
+        current_angle = 0;
     }
 
 
     public void draw() {
-        float target_scale = 1;
-        float target_angle = map((float) Math.sin(frameCount*0.06), -1, 1, 0.5f, 1);
+//        if (current_scale == 0) {
+//            current_scale = feature_map.get("Scale");
+//        }
         
+        current_scale = feature_map.get("Scale");
+        
+        if (current_scale == 0) {
+            // no graph to draw
+            return;
+        }
+
+        float target_angle = map(feature_map.get("Angle"), 0, 1, 0.1f, 1);
         current_angle += (target_angle - current_angle) / delay;
         
-//      add node and lines into frame
+        // add node and lines into frame
         frame = new WB_Frame();
         int current_layers = (int)(current_scale * MAX_LAYERS);
         int left_offset = (EDGE_LENGTH * current_layers);
@@ -110,10 +141,11 @@ public class Valve extends PApplet {
     public void settings() {
         size(WINDOW_SIZE, WINDOW_SIZE, OPENGL);
         smooth(8);
+        DAI.init(dm_name, df_list);
     }
 
     public static void main(String[] args) {
-        PApplet.main(new String[] { "Valve" });
+        PApplet.main(new String[] {dm_name});
     }
 
     static private void logging (String message) {
